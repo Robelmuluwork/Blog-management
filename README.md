@@ -1,3 +1,1 @@
 # Blog-management-backend
-
-test
