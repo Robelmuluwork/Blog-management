@@ -2,29 +2,31 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-//load env variables
+const postRoutes = require("./routes/postRoutes");
+
+// Load environment variables
 dotenv.config();
 
-//initialize express
+// Initialize Express
 const app = express();
 
-//middleware
+// Middleware
 app.use(express.json());
 
-//connect to database
-
+// Connect to the database
 connectDB();
 
-//default route
+// Default route
 app.get("/", (req, res) => {
-  res.send("blog api runnig.....");
+  res.send("Blog API running...");
 });
 
-//auth routes
-app.use("/api/auth", authRoutes);
+// Auth routes
+app.use("/api/auth", authRoutes); // Ensure authRoutes is a valid middleware function
+app.use("/api/posts", postRoutes); // Ensure postRoutes is a valid middleware function
 
-//start the server
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
