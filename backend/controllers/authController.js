@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { secret, expiresIn } = require("../config/jwt");
 const User = require("../models/userModel");
-const bcrypt = require("bcryptjs"); // Import bcrypt for password comparison
+const bcrypt = require("bcryptjs"); 
 
 // Generate token
 const generateToken = (id, role) => {
@@ -41,7 +41,7 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    // Compare the provided password with the hashed password in the database
+    // Compare the provided password with the hashed password 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid email or password" });
