@@ -67,7 +67,7 @@ exports.createAPost = async (req, res) => {
     console.log("new post created", post);
 
     await User.findByIdAndUpdate(
-      authorId, // Find the user by their ID
+      authorId, 
       { $push: { posts: post._id } }, // Push the new post's ID into the posts array
       { new: true, useFindAndModify: false } // Options to return the updated document and avoid deprecation warnings
     );
