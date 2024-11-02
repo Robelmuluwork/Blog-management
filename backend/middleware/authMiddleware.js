@@ -15,7 +15,8 @@ const protect = (req, res, next) => {
     // Verify the token and decode it
     const decoded = jwt.verify(token, secret);
     req.user = decoded; // Set the decoded token data to req.user
-    console.log("User authenticated:", req.user); // Log the user info
+    console.log("User authenticated:", req.user);
+    console.log(req.headers.authorization); // Log the user info
     next();
   } catch (error) {
     console.error("Token verification error:", error); // Log token verification errors
