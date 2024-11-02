@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const postRoutes = require("./routes/postRoutes");
-
+const commentRoutes = require("./routes/commentRoutes.js");
 // Load environment variables
 dotenv.config();
 
@@ -24,6 +24,9 @@ app.get("/", (req, res) => {
 // Auth routes
 app.use("/api/auth", authRoutes); // Ensure authRoutes is a valid middleware function
 app.use("/api/posts", postRoutes); // Ensure postRoutes is a valid middleware function
+
+//commnet routes
+app.use("/api/comments", commentRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
