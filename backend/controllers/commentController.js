@@ -38,27 +38,6 @@ exports.createComment = async (req, res) => {
 };
 
 // Edit an existing comment
-exports.editComment = async (req, res) => {
-  try {
-    const { commentId } = req.params;
-    const { text } = req.body;
-    const comment = await Comment.findById(commentId);
-
-    // Ensure the user owns the comment or has editor role
-    if (!comment.author.equals(req.user._id) && req.user.role !== "editor") {
-      return res
-        .status(403)
-        .json({ message: "Not authorized to edit this comment" });
-    }
-
-    comment.text = text;
-    await comment.save();
-
-    res.status(200).json({ message: "Comment updated", comment });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 
 // Delete a comment
 exports.deleteComment = async (req, res) => {
