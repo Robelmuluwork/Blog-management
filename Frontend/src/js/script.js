@@ -1,11 +1,18 @@
-const wrapper = document.querySelector('.wrapper')
-const registerLink = document.querySelector('.register-link')
-const loginLink = document.querySelector('.login-link')
+document.addEventListener("DOMContentLoaded", function () {
+  const loginLink = document.getElementById("login-link");
+  const registerLink = document.getElementById("register-link");
+  const loginForm = document.getElementById("login-form");
+  const registerForm = document.getElementById("register-form");
 
-registerLink.onclick = () => {
-    wrapper.classList.add('active')
-}
+  loginLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+  });
 
-loginLink.onclick = () => {
-    wrapper.classList.remove('active')
-}   
+  registerLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    loginForm.classList.add("hidden");
+    registerForm.classList.remove("hidden");
+  });
+});

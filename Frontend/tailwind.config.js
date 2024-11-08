@@ -9,7 +9,10 @@ module.exports = {
         accent: "#22c55e", // Customize these colors based on your preference
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["poppins", "sans-serif"],
+      },
+      margin: {
+        23: "5.5rem",
       },
     },
   },
