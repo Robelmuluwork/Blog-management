@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Medium Clone</title>
+    <link href="../../public/assets/css/tailwind.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white fixed w-full top-0 z-50">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a
+              href="/"
+              class="flex items-center text-2xl font-bold text-gray-800"
+            >
+              Blogger
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              class="flex items-center space-x-2 text-gray-700 hover:text-gray-900"
+            >
+              <img
+                src="../../public/assets/images/healthy-eating-while-traveling-1.jpg"
+                alt="Profile"
+                class="w-8 h-8 rounded-full"
+              />
+              <span>tanisha massey</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 fixed h-full bg-white border-r border-gray-200 pt-8 hidden md:block"
+      >
+        <nav class="px-4 space-y-1">
+          <a
+            href="../components/dasheboard.html"
+            class="flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-lg"
+          >
+            <i class="bx bx-grid-alt mr-3 text-lg"></i>
+            Dashboard
+          </a>
+          <a
+            href="../pages/blogpage.html"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-book-content mr-3 text-lg"></i>
+            Blogs
+          </a>
+          <a
+            href="/notifications"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-bell mr-3 text-lg"></i>
+            Notifications
+          </a>
+          <a
+            href="/write"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-edit mr-3 text-lg"></i>
+            Write
+          </a>
+          <div class="border-t border-gray-200 my-4"></div>
+          <a
+            href="/settings"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-cog mr-3 text-lg"></i>
+            Settings
+          </a>
+          <a
+            href="/edit-profile"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-user mr-3 text-lg"></i>
+            Edit Profile
+          </a>
+          <a
+            href="/change-password"
+            class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
+          >
+            <i class="bx bx-lock mr-3 text-lg"></i>
+            Change Password
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 ml-64 p-8">
+        <div class="max-w-4xl mx-auto">
+          <!-- Stats Overview -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-sm font-medium text-gray-500 mb-4">
+                Views this month
+              </h3>
+              <p class="text-3xl font-bold">23.8K</p>
+              <p class="text-sm text-green-600 mt-2">↑ 12% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-sm font-medium text-gray-500 mb-4">
+                New followers
+              </h3>
+              <p class="text-3xl font-bold">892</p>
+              <p class="text-sm text-green-600 mt-2">↑ 8% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-sm font-medium text-gray-500 mb-4">
+                Story interactions
+              </h3>
+              <p class="text-3xl font-bold">1.2K</p>
+              <p class="text-sm text-green-600 mt-2">↑ 18% from last month</p>
+            </div>
+          </div>
+
+          <!-- Recent Stories -->
+          <div class="bg-white rounded-lg shadow-sm">
+            <div class="px-6 py-4 border-b border-gray-200">
+              <h2 class="text-lg font-medium">Recent Stories</h2>
+            </div>
+            <div class="divide-y divide-gray-200">
+              <div class="px-6 py-4 flex items-center justify-between">
+                <div>
+                  <h3 class="font-medium mb-1">
+                    The Brightest Stars in the Darkest Sky
+                  </h3>
+                  <p class="text-sm text-gray-500">Published on Sep 27</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-show"></i>
+                    <span>1.2K views</span>
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-heart"></i>
+                    <span>45 likes</span>
+                  </div>
+                  <button class="text-gray-500 hover:text-gray-700">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="divide-y divide-gray-200"></div>
+              <div class="px-6 py-4 flex items-center justify-between">
+                <div>
+                  <h3 class="font-medium mb-1">
+                    The Brightest Stars in the Darkest Sky
+                  </h3>
+                  <p class="text-sm text-gray-500">Published on Sep 27</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-show"></i>
+                    <span>1.2K views</span>
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-heart"></i>
+                    <span>45 likes</span>
+                  </div>
+                  <button class="text-gray-500 hover:text-gray-700">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="divide-y divide-gray-200"></div>
+              <div class="px-6 py-4 flex items-center justify-between">
+                <div>
+                  <h3 class="font-medium mb-1">
+                    The Brightest Stars in the Darkest Sky
+                  </h3>
+                  <p class="text-sm text-gray-500">Published on Sep 27</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-show"></i>
+                    <span>1.2K views</span>
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <i class="bx bx-heart"></i>
+                    <span>45 likes</span>
+                  </div>
+                  <button class="text-gray-500 hover:text-gray-700">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- More stories... -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
