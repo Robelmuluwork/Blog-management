@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogger - Dashboard</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
- <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../public/assets/css/tailwind.css" rel="stylesheet" />
   </head>
   <body class="bg-white">
     <!-- Navigation -->
@@ -452,21 +452,8 @@
       </div>
     </main>
 
-    <script>
-      // Profile dropdown functionality
-      const profileButton = document.getElementById('profileButton');
-      const profileMenu = document.getElementById('profileMenu');
-
-      profileButton.addEventListener('click', () => {
-        profileMenu.classList.toggle('hidden');
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (event) => {
-        if (!profileButton.contains(event.target) && !profileMenu.contains(event.target)) {
-          profileMenu.classList.add('hidden');
-        }
-      });
+    <script src="../js/script.js">
+      
     </script>
   </body>
 </html>
