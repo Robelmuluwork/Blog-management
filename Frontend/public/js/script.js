@@ -50,6 +50,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
+
 // Mobile sidebar toggle
 const mobileSidebarToggle = document.getElementById("mobileSidebarToggle");
 const sidebar = document.querySelector("aside");
@@ -57,3 +58,4 @@ const sidebar = document.querySelector("aside");
 mobileSidebarToggle.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
 });
+
