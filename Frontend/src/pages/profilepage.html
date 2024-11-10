@@ -11,9 +11,82 @@
     />
   </head>
   <body class="bg-white">
-    <!-- Navigation (Same as index.html) -->
     <nav class="border-b border-gray-200 bg-white fixed w-full top-0 z-50">
-      <!-- ... (Navigation content same as index.html) ... -->
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Left: Logo -->
+          <div class="flex-shrink-0">
+            <h1 class="text-2xl font-bold text-gray-800">Blogger</h1>
+          </div>
+
+          <!-- Center: Search -->
+          <div class="hidden md:block flex-1 max-w-md mx-4">
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+              >
+                <i class="bx bx-search text-gray-400"></i>
+              </div>
+              <input
+                type="search"
+                class="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-full bg-gray-50 text-sm placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:border-gray-500"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+
+          <!-- Right: Actions -->
+          <div class="flex items-center space-x-4">
+            <a
+              href="/write"
+              class="hidden md:flex items-center space-x-1 text-gray-700 hover:text-gray-900"
+            >
+              <i class="bx bx-edit"></i>
+              <span>Write</span>
+            </a>
+            <button class="text-gray-700 hover:text-gray-900">
+              <i class="bx bx-bell text-xl"></i>
+            </button>
+            <div class="relative">
+              <button class="flex items-center space-x-1" id="profileButton">
+                <img
+                  src="../../public/assets/images/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                  alt="Profile"
+                  class="w-8 h-8 rounded-full"
+                />
+                <i class="bx bx-chevron-down"></i>
+              </button>
+              <!-- Profile Dropdown -->
+              <div
+                class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50"
+                id="profileMenu"
+              >
+                <a
+                  href="/profile"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Profile</a
+                >
+                <a
+                  href="../components/dasheboard.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Dashboard</a
+                >
+                <a
+                  href="/settings"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Settings</a
+                >
+                <div class="border-t border-gray-100"></div>
+                <a
+                  href="/signout"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Sign Out</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Profile Header -->
@@ -187,5 +260,6 @@
         <!-- Repeat Article Cards -->
       </div>
     </div>
+    <script src="../js/script.js"></script>
   </body>
 </html>
