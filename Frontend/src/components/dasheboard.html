@@ -83,6 +83,8 @@
             Settings
           </a>
           <a
+
+            href="../pages/editprofilepage.html"
             href="/edit-profile"
             class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
           >
@@ -98,6 +100,15 @@
           </a>
         </nav>
       </aside>
+
+      <div class="fixed top-3 mt-4 right-4 md:hidden z-50">
+        <button
+          class="p-3 bg-black text-white rounded-full shadow-lg"
+          id="mobileSidebarToggle"
+        >
+          <i class="bx bx-menu text-xl"></i>
+        </button>
+      </div>
 
       <!-- Main Content -->
       <main class="flex-1 ml-64 p-8">
@@ -204,5 +215,17 @@
         </div>
       </main>
     </div>
+
+    <script>
+      const mobileSidebarToggle = document.getElementById(
+        "mobileSidebarToggle"
+      );
+      const sidebar = document.querySelector("aside");
+
+      mobileSidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+      });
+    </script>
+
   </body>
 </html>

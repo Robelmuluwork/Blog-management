@@ -49,3 +49,13 @@ document.addEventListener("click", (event) => {
     profileMenu.classList.add("hidden");
   }
 });
+
+
+// Mobile sidebar toggle
+const mobileSidebarToggle = document.getElementById("mobileSidebarToggle");
+const sidebar = document.querySelector("aside");
+
+mobileSidebarToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("hidden");
+});
+

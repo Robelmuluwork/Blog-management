@@ -558,6 +558,11 @@ video {
   pointer-events: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
+
 .invisible {
   visibility: hidden;
 }
@@ -579,6 +584,15 @@ video {
   bottom: 0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+
 .left-0 {
   left: 0px;
 }
@@ -586,6 +600,11 @@ video {
 .right-0 {
   right: 0px;
 }
+
+.right-4 {
+  right: 1rem;
+}
+
 
 .top-0 {
   top: 0px;
@@ -645,6 +664,12 @@ video {
 .mr-3 {
   margin-right: 0.75rem;
 }
+
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 
 .mt-2 {
   margin-top: 0.5rem;
@@ -734,6 +759,12 @@ video {
   width: 6rem;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
+=======
+
 .w-48 {
   width: 12rem;
 }
@@ -752,6 +783,11 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-4xl {
@@ -824,6 +860,12 @@ video {
   align-items: center;
 }
 
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+
 .justify-center {
   justify-content: center;
 }
@@ -893,6 +935,14 @@ video {
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
+
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -996,6 +1046,16 @@ video {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
 
 .p-6 {
   padding: 1.5rem;
@@ -1335,6 +1395,14 @@ video {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+
+.focus\:ring-black:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+}
+
+=======
+
 .focus\:ring-gray-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
@@ -1365,12 +1433,23 @@ video {
 }
 
 @media (min-width: 768px) {
+
+  .md\:ml-64 {
+    margin-left: 16rem;
+  }
+
+
   .md\:block {
     display: block;
   }
 
   .md\:flex {
     display: flex;
+  }
+
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:h-32 {
