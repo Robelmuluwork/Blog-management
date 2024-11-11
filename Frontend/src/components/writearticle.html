@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write - Blogger</title>
+    <link href="../../public/assets/css/tailwind.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white fixed w-full top-0 z-50">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Left: Logo and Title -->
+          <div class="flex items-center">
+            <a
+              href="/"
+              class="flex items-center text-2xl font-bold text-gray-800"
+            >
+              Blogger
+            </a>
+          </div>
+
+          <!-- Right: Actions -->
+          <div class="flex items-center space-x-4">
+            <button class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900">
+              Save Draft
+            </button>
+            <button
+              class="px-4 py-2 text-sm bg-black text-white rounded-full hover:bg-gray-800"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-16">
+      <div class="max-w-screen-lg mx-auto px-4">
+        <!-- Banner Upload -->
+        <div class="mt-8 mb-6">
+          <div
+            class="relative w-full aspect-[3/1] bg-gray-50 rounded-lg border border-gray-200 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+          >
+            <input
+              type="file"
+              class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              accept="image/*"
+            />
+            <p class="text-2xl text-gray-300 select-none">Blog Banner</p>
+          </div>
+        </div>
+
+        <!-- Title Input -->
+        <div class="mb-8">
+          <input
+            type="text"
+            placeholder="Blog Title"
+            class="w-full text-4xl text-gray-300 border-none outline-none placeholder-gray-300 focus:ring-0 focus:text-gray-800"
+          />
+        </div>
+
+        <!-- Content Area -->
+        <div class="relative">
+          <!-- Add Content Button -->
+          <button
+            id="addContentBtn"
+            class="flex items-center space-x-1 text-gray-500 hover:text-gray-700"
+          >
+            <span class="text-xl">+</span>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="formatDropdown"
+            class="hidden absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-10"
+          >
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-filter-alt mr-2"></i>
+              Filter
+            </button>
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-text mr-2"></i>
+              Text
+            </button>
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-list-ul mr-2"></i>
+              List
+            </button>
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-image mr-2"></i>
+              Image
+            </button>
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-heading mr-2"></i>
+              Heading
+            </button>
+            <button
+              class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center"
+            >
+              <i class="bx bx-quote-left mr-2"></i>
+              Quote
+            </button>
+          </div>
+
+          <!-- Content Editor -->
+          <div class="prose prose-lg max-w-none mt-4">
+            <div
+              contenteditable="true"
+              class="min-h-[200px] outline-none"
+              data-placeholder="Let's write an awesome story!"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Handle file upload preview
+      const fileInput = document.querySelector('input[type="file"]');
+      const uploadArea = fileInput.parentElement;
+
+      fileInput.addEventListener("change", function (e) {
+        if (this.files && this.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            uploadArea.style.backgroundImage = `url(${e.target.result})`;
+            uploadArea.style.backgroundSize = "cover";
+            uploadArea.style.backgroundPosition = "center";
+            uploadArea.querySelector("p").style.display = "none";
+          };
+          reader.readAsDataURL(this.files[0]);
+        }
+      });
+
+      // Dropdown menu functionality
+      const addContentBtn = document.getElementById("addContentBtn");
+      const formatDropdown = document.getElementById("formatDropdown");
+
+      addContentBtn.addEventListener("click", () => {
+        formatDropdown.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !addContentBtn.contains(event.target) &&
+          !formatDropdown.contains(event.target)
+        ) {
+          formatDropdown.classList.add("hidden");
+        }
+      });
+
+      // Content placeholder functionality
+      const editor = document.querySelector("[contenteditable]");
+      const placeholder = editor.getAttribute("data-placeholder");
+
+      editor.addEventListener("focus", function () {
+        if (this.textContent.trim() === "") {
+          this.textContent = "";
+        }
+      });
+
+      editor.addEventListener("blur", function () {
+        if (this.textContent.trim() === "") {
+          this.textContent = placeholder;
+          this.style.color = "#9CA3AF";
+        }
+      });
+
+      // Initialize placeholder
+      if (editor.textContent.trim() === "") {
+        editor.textContent = placeholder;
+        editor.style.color = "#9CA3AF";
+      }
+
+      editor.addEventListener("input", function () {
+        if (this.textContent.trim() !== placeholder) {
+          this.style.color = "#1F2937";
+        }
+      });
+    </script>
+  </body>
+</html>

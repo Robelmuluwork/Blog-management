@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //change words in home page
 const words = ["ideas", "knowledge", "learning"];
-const colors = ["text-blue-600", "text-green-600", "text-purple-600"];
+const colors = ["text-blue-600", "text-green-600", "text-purple-700"];
 let currentIndex = 0;
 
 function changeWord() {
@@ -49,8 +49,6 @@ document.addEventListener("click", (event) => {
     profileMenu.classList.add("hidden");
   }
 });
-
-
 // Mobile sidebar toggle
 const mobileSidebarToggle = document.getElementById("mobileSidebarToggle");
 const sidebar = document.querySelector("aside");
@@ -58,4 +56,37 @@ const sidebar = document.querySelector("aside");
 mobileSidebarToggle.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
 });
+// Handle file upload preview
+const fileInput = document.querySelector('input[type="file"]');
+const uploadArea = fileInput.parentElement;
 
+fileInput.addEventListener("change", function (e) {
+  if (this.files && this.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      uploadArea.style.backgroundImage = `url(${e.target.result})`;
+      uploadArea.style.backgroundSize = "cover";
+      uploadArea.style.backgroundPosition = "center";
+      uploadArea.querySelector("p").style.display = "none";
+    };
+    reader.readAsDataURL(this.files[0]);
+  }
+});
+
+// Dropdown menu functionality
+const addContentBtn = document.getElementById("addContentBtn");
+const formatDropdown = document.getElementById("formatDropdown");
+
+addContentBtn.addEventListener("click", () => {
+  formatDropdown.classList.toggle("hidden");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (event) => {
+  if (
+    !addContentBtn.contains(event.target) &&
+    !formatDropdown.contains(event.target)
+  ) {
+    formatDropdown.classList.add("hidden");
+  }
+});

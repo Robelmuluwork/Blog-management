@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Medium Clone</title>
+    <title>Dashboard</title>
     <link href="../../public/assets/css/tailwind.css" rel="stylesheet" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -68,7 +68,7 @@
             Notifications
           </a>
           <a
-            href="/write"
+            href="../components/writearticle.html"
             class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
           >
             <i class="bx bx-edit mr-3 text-lg"></i>
@@ -100,6 +100,14 @@
           </a>
         </nav>
       </aside>
+      <div class="fixed top-3 mt-4 right-4 md:hidden z-50">
+        <button
+          class="p-3 bg-black text-white rounded-full shadow-lg"
+          id="mobileSidebarToggle"
+        >
+          <i class="bx bx-menu text-xl"></i>
+        </button>
+      </div>
 
       <div class="fixed top-3 mt-4 right-4 md:hidden z-50">
         <button
@@ -215,7 +223,6 @@
         </div>
       </main>
     </div>
-
     <script>
       const mobileSidebarToggle = document.getElementById(
         "mobileSidebarToggle"
@@ -226,6 +233,5 @@
         sidebar.classList.toggle("hidden");
       });
     </script>
-
   </body>
 </html>
