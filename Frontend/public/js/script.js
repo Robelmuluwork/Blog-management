@@ -49,7 +49,6 @@ document.addEventListener("click", (event) => {
     profileMenu.classList.add("hidden");
   }
 });
-
 // Mobile sidebar toggle
 const mobileSidebarToggle = document.getElementById("mobileSidebarToggle");
 const sidebar = document.querySelector("aside");
@@ -57,7 +56,6 @@ const sidebar = document.querySelector("aside");
 mobileSidebarToggle.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
 });
-
 // Handle file upload preview
 const fileInput = document.querySelector('input[type="file"]');
 const uploadArea = fileInput.parentElement;
